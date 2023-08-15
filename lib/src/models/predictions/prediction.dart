@@ -56,6 +56,7 @@ class Prediction {
   }
 
   factory Prediction.fromJson(Map<String, dynamic> json) {
+    print(json);
     return Prediction(
       id: json['id'],
       version: json['version'],
@@ -72,7 +73,7 @@ class Prediction {
       output: json['output'],
       error: json['error'],
       logs: json['logs'],
-      metrics: PredictionMetrics.fromJson(json['metrics']),
+      metrics: PredictionMetrics.fromJson(json['metrics'] ?? {}),
     );
   }
 
